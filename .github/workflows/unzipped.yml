@@ -1,0 +1,19 @@
+name: Unzip File
+
+on: [push, workflow_dispatch]  # รันเมื่อ push หรือกดรันเอง
+
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Check if zip file exists
+        run: ls -la InteractiveTracker.zip
+
+      - name: Unzip File
+        run: unzip InteractiveTracker.zip -d ./
+
+      - name: List Files After Unzip
+        run: ls -la
