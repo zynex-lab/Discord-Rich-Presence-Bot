@@ -1,0 +1,2 @@
+- name: Unzip File
+  run: unzip InteractiveTracker.zip -d ./path-to-extract
